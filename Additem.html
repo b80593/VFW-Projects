@@ -9,6 +9,7 @@
         <meta description="The Church Registration Form will help keep track of our members" />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="user-scalable=no, width=device-width" />
+        <link href="styles.css" rel="stylesheet" />
         <title>My First HTML5 Form</title>
     </head>
     <body>
@@ -17,9 +18,9 @@
             <fieldset>
                 <legend>Add a Member</legend>
                 <ul>
-                    <li><label for="fname">Full Name :</label><input type="text" id="Full Name"/></li>
-                    <li><label for="address">Address :</label><input type="address" id="Address" /></li>
-                    <li><label for="phone">Phone :</label><input type="phone" id="Phone"/></li>
+                    <li><label for="fname">Full Name :</label><input type="text" id="fname"/></li>
+                    <li><label for="address">Address :</label><input type="address" id="address" /></li>
+                    <li><label for="phone">Phone :</label><input type="phone" id="phone"/></li>
                     <li><label for="email">Email :</label><input type="email" placeholder="example@email.org" /></li> 
                 </ul>
             </fieldset>
@@ -27,34 +28,36 @@
                 <legend>Get involved in</legend>
                 <ul>
                     <li>Departments :
-                        <li><input type="checkbox" checked value="Worship Ministry" id="worship" /><label for="worship">Worship Ministry</label></li>
-                            <select id="worship">
-                                <optgroup label="Vocals">
-                                    <option value="Lead">Lead</option>
-                                    <option value="Background">Background</option>
-                                </optgroup>
-                                <optgroup label="Instruments">
-                                    <option value="Drums">Drums</option>
-                                    <option value="Piano">Piano</option>
-                                    <option value="Bass">Bass</option>
-                                    <option value="Guitar">Guitar</option>
-                                </optgroup>
-                            </select>
-                        <li><input type="checkbox" value="Kids Ministry" id="kidMin" /><label for="kidMin">Kids Ministry</label></li>
-                        <li><input type="checkbox" value="Production" id="production" /><label for="production">Production</label></li>
-                        <li><input type="checkbox" value="Ushers" id="ushers" /><label for="ushers">Ushers</label></li>
+                        <li><input type="checkbox" checked value="worship" id="worship" /><label for="worship">Worship Ministry</label></li>
+                            <li>
+                                <select>
+                                    <optgroup label="Vocals">
+                                        <option value="Lead">Lead</option>
+                                        <option value="Background">Background</option>
+                                    </optgroup>
+                                    <optgroup label="Instruments">
+                                        <option value="Drums">Drums</option>
+                                        <option value="Piano">Piano</option>
+                                        <option value="Bass">Bass</option>
+                                        <option value="Guitar">Guitar</option>
+                                    </optgroup>
+                                </select>
+                            </li>
+                        <li><input type="checkbox" value="kidMin" id="kidMin" /><label for="kidMin">Kids Ministry</label></li>
+                        <li><input type="checkbox" value="production" id="production" /><label for="production">Production</label></li>
+                        <li><input type="checkbox" value="ushers" id="ushers" /><label for="ushers">Ushers</label></li>
                     </li>
                 </ul>
                 <ul>
                     <li>Tell us about you:
-                        <li><label for="age">Your Age</label><input type="range" value="Age" id="age" /></li>
-                        <li><label for="date">Birth Date</label><input type="date" value="Date" id="date" /></li>
+                        <li><label for="age">Your Age</label><input type="range" value="age" id="age" /></li>
+                        <li><label for="date">Birth Date</label><input type="date" value="date" id="date" /></li>
                     </li>
                     <li>Gender :
-                        <li><input type="radio" checked value="Male" id="male" name="gender" /><label for="male">Male</label></li>
-                        <li><input type="radio" value="Female" id="female" name="gender" /><label for="female">Female</label></li>
+                        <li><input type="radio" checked value="male" id="male" name="gender" /><label for="male">Male</label></li>
+                        <li><input type="radio" value="female" id="female" name="gender" /><label for="female">Female</label></li>
                     </li>
-                    <li><label for="comments">Comments :</label><textarea id="comments"></textarea></li>
+                    <li><label for="comments">Comments: </label><textarea id="comments"></textarea></li>
                     <li><input type="hidden" value="true" /></li>
                 </ul>
             </fieldset>
