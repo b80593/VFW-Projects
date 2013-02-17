@@ -29,9 +29,9 @@
                 <legend>Get involved in</legend>
                 <ul>
                     <li id="department">Departments :
-                        <li><input type="checkbox" value="worship" id="worMinistry" /><label for="worship">Worship Ministry</label></li>
+                        <li><input type="checkbox" value="worship" id="worship" name="ekkipo" /><label for="worship">Worship Ministry</label></li>
                             <li>
-                                <select id="worship">
+                                <select id="worships">
                                     <optgroup label="Instruments">
                                         <option value="none">None</option>
                                         <option value="Drums">Drums</option>
@@ -45,15 +45,15 @@
                                     </optgroup> 
                                 </select>
                             </li>
-                        <li><input type="checkbox" value="kidMin" id="kidMin" /><label for="kidMin">Kids Ministry</label></li>
-                        <li><input type="checkbox" value="production" id="production" /><label for="production">Production</label></li>
-                        <li><input type="checkbox" value="ushers" id="ushers" /><label for="ushers">Ushers</label></li>
+                        <li><input type="checkbox" value="kidMin" id="kidMin" name="ekkipo" /><label for="kidMin">Kids Ministry</label></li>
+                        <li><input type="checkbox" value="production" id="production" name="ekkipo" /><label for="production">Production</label></li>
+                        <li><input type="checkbox" value="ushers" id="ushers" name="ekkipo" /><label for="ushers">Ushers</label></li>
                     </li>
                 </ul>
                 <ul>
                     <li id="tellUs">Tell us about you:
                         <li><label for="date">Birth Date</label><input type="date" value="date" id="date" /></li>
-                        <li><label for="age">Your Age</label><input type="range" id="age" min="1" max="100" /></li>
+                        <li><label for="age">Your Age</label><input type="range" min="1" max="100" id="age" /></li>
                     </li>
                     <li id="genders">Gender :
                         <li><input type="radio" checked value="Male" id="male" name="gender" /><label for="male">Male</label></li>

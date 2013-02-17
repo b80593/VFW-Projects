@@ -37,15 +37,16 @@ window.addEventListener("DOMContentLoaded", function(){
         }
     }
     //Set value of the checkbox
-    //function getCheckValue(){
-    //    var checkedIt = document.form[0].adora;
-    //    for(var i=0; i<checkedIt.length; i++){
-    //        if(checkedIt[i].checked){
-    //            departValue =checkedIt[i].value;
-    //        }
-    //    }
-    //}
+    function getCheckValue(){
+        var checkedIt = document.forms[0].ekkipo;
+        for(var i=0; i<checkedIt.length; i++){
+            if(checkedIt[i].checked){
+                departValue =checkedIt[i].value;
+            }
+        }
+    }
     
+    //Toggle Controls
     function toggControls(n){
         switch(n){
             case "on":
@@ -72,15 +73,15 @@ window.addEventListener("DOMContentLoaded", function(){
         //Gather up all our form field value and store in a object.
         //Object properties contain array with the form label and input value.
         getSelectedRadio();
-        //getCheckValue();
+        getCheckValue();
         var item            = {};
             item.fname      =["Full Name:", $("fname").value];
             item.address    =["Address:", $("address").value];
             item.phone      =["Phone:", $("phone").value];
             item.email      =["Email:", $("email").value];
             item.about      =["Hear about Us:", $("acceso").value];
-            //item.adora      =["Department:", departValue];
-            item.worship    =["Instrument:", $("worship").value];
+            item.ekkipo     =["Department:", departValue];
+            item.worship    =["Instrument:", $("worships").value];
             item.date       =["Birth Date:", $("date").value];
             item.age        =["Age:", $("age").value];
             item.sex        =["Gender:", genderValue];
@@ -121,6 +122,7 @@ window.addEventListener("DOMContentLoaded", function(){
         
     }
     
+    //Clear Local Storage
     function clearLocal(){
         if(localStorage.length === 0){
             alert("There is no data to clear.")
@@ -134,8 +136,8 @@ window.addEventListener("DOMContentLoaded", function(){
     
     //Variable defaults
     var aboutUs = ["--Choose One--", "Facebook", "Twitter", "Website", "Friend", "Other"],
-        genderValue
-        //departValue
+        genderValue,
+        departValue
     ;
     makeCont();
     
