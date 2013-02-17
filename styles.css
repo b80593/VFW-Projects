@@ -2,3 +2,84 @@
         William Rivera
         Visual Frameworks 1302
 */
+
+/*index html*/
+h1{
+    margin: 5px 10px;
+    padding: 10px 30px;
+    background: #312e67;
+    color: #fff;
+    font-family: Helvetica;
+    font-size: 25px
+    
+}
+h2{
+    color: #312e67;
+    margin: 10px 150px;
+}
+div span{
+    margin: 10px 157px;
+}
+img{
+    width: 225px;
+    height: 225px;
+    margin: 20px 90px;
+}
+
+/*Additem HTML*/
+fieldset{
+    background: #bbbbbf;
+    margin: 5px 10px;
+    margin-top: 10px;
+}
+legend{
+    font-family: arial;
+    font-size: 18px;
+    color: #fff;
+    background: #312e67;
+    padding: 5px;
+    
+}
+label{
+    font-family: arial;
+    font-size: 16px;
+    color: #fff
+}
+#fname{
+    display: block;
+}
+#address{
+    display: block;
+}
+#phone{
+    display: block;
+}
+#email{
+    display: block;
+}
+/*Get involved*/
+
+#department{
+    margin-left: -25px;
+    font-family: arial;
+    font-size: 19px;
+    color: #1f1fe5;
+}
+#tellUs{
+    margin-left: -25px;
+    font-family: arial;
+    font-size: 19px;
+    color: #1f1fe5;
+}
+#date{
+    display: block;
+}
+#age{
+    display: block;
+}
+#gender{
+    margin-left: -25px;
+    font-family: arial;
+    font-size: 19px;
+    color: #1f1fe5;
+}
