@@ -41,9 +41,9 @@ window.addEventListener("DOMContentLoaded", function(){
         var checkedIt = document.forms[0].ekkipo;
         for(var i=0; i<checkedIt.length; i++){
             if(checkedIt[i].checked){
-                departValue =checkedIt[i].value;
+                departValue[i] = checkedIt[i].value;
             }
-        }
+        }  
     }
     
     //Toggle Controls
@@ -137,7 +137,7 @@ window.addEventListener("DOMContentLoaded", function(){
     //Variable defaults
     var aboutUs = ["--Choose One--", "Facebook", "Twitter", "Website", "Friend", "Other"],
         genderValue,
-        departValue
+        departValue = [""]
     ;
     makeCont();
     
