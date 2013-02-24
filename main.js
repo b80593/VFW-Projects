@@ -227,7 +227,58 @@ window.addEventListener("DOMContentLoaded", function(){
             return false;
         }
     }
-    
+    function validate(e){
+        //Define elements
+        var getFname = $('fname');
+        var getEmail = $('email');
+        var getAbout = $('acceso');
+        
+        //Reset Error Message
+        errMsg.innerHTML = "";
+            getFname.style.border = "1px solid black";
+            getEmail.style.border = "1px solid black";
+            getAbout.style.border = "1px solid black";
+
+        
+        // Get error messages
+        var messArray = [];
+        //Full Name Validation
+        if(getFname.value=== ""){
+            var fNameError = "Please enter Full Name.";
+            getFname.style.border = "1px solid red";
+            messArray.push(fNameError);
+        }
+        
+        //Email Validation
+        var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(!(re.exec(getEmail.value))){
+            var emailError = "Please enter a valid email address.";
+            getEmail.style.border = "1px solid red";
+            messArray.push(emailError);
+        }
+        
+        //About US Validation  
+        if(getAbout.value==="--Choose One--"){
+            var aboutError = "Please Choose, How you hear about us:";
+            getAbout.style.border = "1px solid red";
+            messArray.push(aboutError)
+        }
+        
+        //If errors display them on screen.
+        if (messArray.length >= 1){
+            for(var i=0, j=messArray.length; i < j; i++){
+                var txt = document.createElement('li');
+                txt.innerHTML = messArray[i];
+                errMsg.appendChild(txt);
+            }
+            e.preventDefault();
+                return false;
+        }else{
+            //if all is ok save data
+            storeData(this.key);
+        }
+        
+    }
     
     //Variable defaults
     var aboutUs = ["--Choose One--", "Facebook", "Twitter", "Website", "Friend", "Other"],
