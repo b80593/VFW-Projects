@@ -14,15 +14,17 @@
     </head>
     <body>
         <h1>Church Registration Form</h1>
-        <form action="" method="post" id="MemRegForm" />
+        <form action="" method="post" id="MemRegForm">
             <fieldset>
                 <legend>Add a Member</legend>
+                <span>*fields are required.</span>
+                <ul id="errors"></ul>
                 <ul>
-                    <li><label for="fname">Full Name :</label><input type="text" id="fname"/></li>
+                    <li><label for="fname">*Full Name :</label><input type="text" id="fname"/></li>
                     <li><label for="address">Address :</label><input type="address" id="address" /></li>
                     <li><label for="phone">Phone :</label><input type="phone" id="phone"/></li>
-                    <li><label for="email">Email :</label><input type="email" id="email" placeholder="example@email.org" /></li>
-                    <li id="select"><label for="contact">How you hear about us :</label><br /></li>
+                    <li><label for="email">*Email :</label><input type="email" id="email" placeholder="example@email.org" /></li>
+                    <li id="select"><label for="contact">*How you hear about us :</label><br /></li>
                 </ul>
             </fieldset>
             <fieldset>
