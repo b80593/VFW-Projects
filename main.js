@@ -1,4 +1,4 @@
-/* Project: Web App Part 2
+/* Project: Web App Part 4
         William Rivera
         Visual Frameworks 1302
 */
@@ -38,12 +38,11 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     //Set value of the checkbox
     function getCheckValue(){
-        var checkedIt = document.forms[0].ekkipo;
-        for(var i=0; i<checkedIt.length; i++){
-            if(checkedIt[i].checked){
-                departValue[i] = checkedIt[i].value;
-            }
-        }  
+        if($("worship").checked){
+            departValue = $("worship").value;     
+        }else{
+            departValue = "No"   
+        }
     }
     
     //Toggle Controls
@@ -85,8 +84,8 @@ window.addEventListener("DOMContentLoaded", function(){
             item.phone      =["Phone:", $('phone').value];
             item.email      =["Email:", $('email').value];
             item.about      =["Hear about Us:", $('acceso').value];
-            item.ekkipo     =["Department:", departValue];
-            item.worship    =["Instrument:", $('worships').value];
+            item.ekkipo     =["Discipleship:", departValue];
+            item.worship    =["Department:", $('worships').value];
             item.date       =["Birth Date:", $('date').value];
             item.age        =["Age:", $('age').value];
             item.sex        =["Gender:", genderValue];
@@ -167,24 +166,12 @@ window.addEventListener("DOMContentLoaded", function(){
         $('phone').value = item.phone[1];
         $('email').value = item.email[1];
         $('acceso').value = item.about[1];
-        //var checkedIt = document.forms[0].ekkipo;
-        //for(var i=0; i<checkedIt.length; i++){
-        //    if(checkedIt[i].value == "worship" && item.ekkipo[1] == "worship"){
-        //        checkedIt[i].setAttribute("checked", "checked");
-        //    }
-        //    if(checkedIt[i].value == "kidMin" && item.ekkipo[1] == "kidMin"){
-        //        checkedIt[i].setAttribute("checked", "checked");
-        //    }
-        //    if(checkedIt[i].value == "production" && item.ekkipo[1] == "production"){
-        //        checkedIt[i].setAttribute("checked", "checked");
-        //    }
-        //    if(checkedIt[i].value == "ushers" && item.ekkipo[1] == "ushers"){
-        //        checkedIt[i].setAttribute("checked", "checked");
-        //    }
-        //}
-        //$('worships').value = item.worship[1];
-        //$('date').value = item.date[1];
-        //$('age').value = item.age[1];
+        if (item.ekkipo[1] == "Yes") {
+            $("worship").setAttribute("checked", "checked");
+        }
+        $('worships').value = item.worship[1];
+        $('date').value = item.date[1];
+        $('age').value = item.age[1];
         //var radios = document.forms[0].gender;
         //for(var i=0; i<radios.length; i++){
         //    if(radios[i].value == "Male" && item.gender[1] == "Male"){
@@ -283,7 +270,7 @@ window.addEventListener("DOMContentLoaded", function(){
     //Variable defaults
     var aboutUs = ["--Choose One--", "Facebook", "Twitter", "Website", "Friend", "Other"],
         genderValue,
-        departValue = [""],
+        departValue = "No",
         errMsg = $('errors')
     ;
     makeCont();
