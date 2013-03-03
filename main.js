@@ -184,12 +184,10 @@ window.addEventListener("DOMContentLoaded", function(){
         //Removed the initial listener from the input 'submitInfo' buttom.
         submitInfo.removeEventListener("click", storeData);
         //Change submit value to Edit Button
-        $('submit').value = "Edit Member Info";
-        var editSubmit = $('submit');
+        $("submit").value = "Edit Member Info";
+        var editSubmit = $("submit");
         editSubmit.addEventListener("click", validate);
-        editSubmit.key = this.key;
-        
-        
+        editSubmit.key = this.key;    
     }
     
     function deleteItem(){
