@@ -98,7 +98,8 @@ window.addEventListener("DOMContentLoaded", function(){
     function getData(){
         toggControls("on");
         if(localStorage.length === 0){
-            alert("There is no data in Local Storage.");
+            alert("There is no data in Local Storage so default data was added.");
+            autoFillData();
         }
         //Write Data back to the Browser
         var mkeDiv = document.createElement('div');
@@ -109,6 +110,7 @@ window.addEventListener("DOMContentLoaded", function(){
         $('items').style.display = "block";
         for(var i=0, len=localStorage.length; i<len;i++){
             var makeLi = document.createElement('li');
+            makeLi.setAttribute("id", "listitem");
             var lnksLi = document.createElement('li');
             mkeList.appendChild(makeLi);
             var key = localStorage.key(i);
@@ -117,6 +119,7 @@ window.addEventListener("DOMContentLoaded", function(){
             var objeW = JSON.parse(value);
             var mkeSbList = document.createElement('ul');
             makeLi.appendChild(mkeSbList);
+            getImage(obj.group[1], mkeSbList);
             for(var n in objeW){
                 var mkeSubLi = document.createElement('li');
                 mkeSbList.appendChild(mkeSubLi);
@@ -127,6 +130,24 @@ window.addEventListener("DOMContentLoaded", function(){
             mkeItemLnks(localStorage.key(i), lnksLi); //Links for edit and delete 
         }
         
+    }
+    //Get Image for the right Ministry
+    function getImage(catName, mkeSbList){
+        var imageLi = document.createElement("li");
+        mkeSbList.appendChild(imageLi);
+        var newImg = document.createElement("img");
+        var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
+        imageLi.appendChild(newImg);
+        
+    }
+    //Auto Populate Local Storage
+    function autoFillData(){
+        //The data required for this to work is coming from our json.js file, which is loaded from our html
+        //Store the JSON Obj into Local Storage
+        for (var n in json){
+            var id = Math.floor(Math.random()*1000000001);
+            localStorage.setItem(id, JSON.stringify(json[n]));
+        }
     }
     //Item Links
     // Create links for each stored item when displaed
@@ -172,14 +193,14 @@ window.addEventListener("DOMContentLoaded", function(){
         $('worships').value = item.worship[1];
         $('date').value = item.date[1];
         $('age').value = item.age[1];
-        //var radios = document.forms[0].gender;
-        //for(var i=0; i<radios.length; i++){
-        //    if(radios[i].value == "Male" && item.gender[1] == "Male"){
-        //        radios[i].setAttribute("checked", "checked");
-        //    }else if(radios[i].value == "Female" && item.gender[1] == "Female"){
-        //        radios[i].setAttribute("checked", "checked");
-        //    }
-        //}
+        var radios = document.forms[0].gender;
+        for(var i=0; i<radios.length; i++){
+            if(radios[i].value == "Male" && item.sex[1] == "Male"){
+                radios[i].setAttribute("checked", "checked");
+            }else if(radios[i].value == "Female" && item.sex[1] == "Female"){
+                radios[i].setAttribute("checked", "checked");
+            }
+        }
         
         //Removed the initial listener from the input 'submitInfo' buttom.
         submitInfo.removeEventListener("click", storeData);
@@ -263,7 +284,7 @@ window.addEventListener("DOMContentLoaded", function(){
             storeData(this.key);
         }
         
-    }
+    }  
     
     //Variable defaults
     var aboutUs = ["--Choose One--", "Facebook", "Twitter", "Website", "Friend", "Other"],
