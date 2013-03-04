@@ -119,7 +119,6 @@ window.addEventListener("DOMContentLoaded", function(){
             var objeW = JSON.parse(value);
             var mkeSbList = document.createElement('ul');
             makeLi.appendChild(mkeSbList);
-            getImage(obj.group[1], mkeSbList);
             for(var n in objeW){
                 var mkeSubLi = document.createElement('li');
                 mkeSbList.appendChild(mkeSubLi);
